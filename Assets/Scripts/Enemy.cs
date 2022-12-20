@@ -36,4 +36,9 @@ public class Enemy : MonoBehaviour
 		curWayIndex++;
 		agent.destination = WaveManager.Instance.WayPoints[curWayIndex].position;
 	}
+
+	public void TakeDamage(int damage)
+	{
+		Destroy(gameObject);
+	}
 }

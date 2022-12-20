@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfdb038d14d79624b8484d79d39e7a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topParts: {fileID: 7909684586714653475}
+  bottomParts: {fileID: 7518656352806415285}
+  damage: 10
+  range: 5
+  fireRate: 7
 --- !u!1 &7190954320987387432
 GameObject:
   m_ObjectHideFlags: 0
