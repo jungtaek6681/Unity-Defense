@@ -55,4 +55,10 @@ public class Tower : MonoBehaviour
 		lastShootTime = Time.time;
 		target.TakeDamage(damage);
 	}
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, range);
+	}
 }
