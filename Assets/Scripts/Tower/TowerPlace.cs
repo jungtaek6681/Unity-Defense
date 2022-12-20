@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 public class TowerPlace : MonoBehaviour
 {
@@ -26,7 +28,14 @@ public class TowerPlace : MonoBehaviour
 
 	private void OnMouseOver()
 	{
-		render.material.color = mouseOver;
+		if (EventSystem.current.IsPointerOverGameObject())
+		{
+			render.material.color = normal;
+		}
+		else
+		{
+			render.material.color = mouseOver;
+		}
 	}
 
 	private void OnMouseExit()
@@ -36,6 +45,9 @@ public class TowerPlace : MonoBehaviour
 
 	private void OnMouseUpAsButton()
 	{
+		if (EventSystem.current.IsPointerOverGameObject())
+			return;
+
 		if (null == tower)
 			BuildManager.Instance.Build(this);
 	}
