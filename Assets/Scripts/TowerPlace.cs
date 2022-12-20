@@ -6,6 +6,8 @@ public class TowerPlace : MonoBehaviour
 {
 	private Renderer render;
 
+	public Tower tower;
+
 	[SerializeField]
 	private Color normal;
 
@@ -22,41 +24,19 @@ public class TowerPlace : MonoBehaviour
 		render.material.color = normal;
 	}
 
-	private void OnMouseUp()
-	{
-		Debug.Log("OnMouseUp");
-	}
-
-	private void OnMouseDown()
-	{
-		Debug.Log("OnMouseDown");
-	}
-
-	private void OnMouseEnter()
-	{
-
-		Debug.Log("OnMouseEnter");
-	}
-
 	private void OnMouseOver()
 	{
-		Debug.Log("OnMouseOver");
 		render.material.color = mouseOver;
 	}
 
 	private void OnMouseExit()
 	{
-		Debug.Log("OnMouseExit");
 		render.material.color = normal;
-	}
-
-	private void OnMouseDrag()
-	{
-		Debug.Log("OnMouseDrag");
 	}
 
 	private void OnMouseUpAsButton()
 	{
-		Debug.Log("OnMouseButton");
+		if (null == tower)
+			BuildManager.Instance.Build(this);
 	}
 }
