@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveManager : SingleTon<WaveManager>
 {
@@ -10,12 +11,24 @@ public class WaveManager : SingleTon<WaveManager>
 	private Transform way;
 	public List<Transform> WayPoints { get; private set; }
 
+	[Header("Heart")]
+	[SerializeField]
+	private int heart;
+
+	public UnityAction<int> OnHeartChanged;
+
 	[Header("Enemy")]
 	[SerializeField]
 	private Enemy enemyPrefab;
 	[SerializeField]
 	private float spawnDelay;
 	private Coroutine spawnRoutine;
+
+	public int Heart
+	{ 
+		get { return heart; }
+		private set { heart = value; OnHeartChanged?.Invoke(heart); }
+	}
 
 	private void Awake()
 	{
@@ -43,5 +56,12 @@ public class WaveManager : SingleTon<WaveManager>
 			yield return new WaitForSeconds(spawnDelay);
 			Instantiate(enemyPrefab, WayPoints.First().position, Quaternion.identity);
 		}
+	}
+
+	public void TakeDamage(int damage)
+	{
+		Heart -= damage;
+
+		// TODO : if (Heart <= 0) GameManager.Instance.GameOver();
 	}
 }

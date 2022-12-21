@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
 	private void OnArriveEndPoint()
 	{
-		Debug.Log("¸ñ¼û--");
+		WaveManager.Instance.TakeDamage(1);
 		Destroy(gameObject);
 	}
 
@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
 
 	public void TakeDamage(int damage)
 	{
+		BuildManager.Instance.GainEnergy(1);
 		Destroy(gameObject);
 	}
 }

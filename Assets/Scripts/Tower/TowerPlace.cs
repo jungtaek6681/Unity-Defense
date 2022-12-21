@@ -14,7 +14,10 @@ public class TowerPlace : MonoBehaviour
 	private Color normal;
 
 	[SerializeField]
-	private Color mouseOver;
+	private Color enable;
+
+	[SerializeField]
+	private Color disable;
 
 	private void Awake()
 	{
@@ -32,9 +35,13 @@ public class TowerPlace : MonoBehaviour
 		{
 			render.material.color = normal;
 		}
+		else if (BuildManager.Instance.Energy >= BuildManager.Instance.SelectedTower.Cost)
+		{
+			render.material.color = enable;
+		}
 		else
 		{
-			render.material.color = mouseOver;
+			render.material.color = disable;
 		}
 	}
 

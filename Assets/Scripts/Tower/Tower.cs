@@ -18,9 +18,13 @@ public class Tower : MonoBehaviour
 	private float range;
 	[SerializeField]
 	private float fireRate;
+	[SerializeField]
+	private int cost;
 
 	private Enemy target;
 	private float lastShootTime = 0f;
+
+	public int Cost { get { return cost; } private set { cost = value; } }
 
 	private void Update()
 	{

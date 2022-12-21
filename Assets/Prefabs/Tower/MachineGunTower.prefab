@@ -83,6 +83,7 @@ MonoBehaviour:
   damage: 1
   range: 10
   fireRate: 3
+  cost: 10
 --- !u!1001 &1351757822712726145
 PrefabInstance:
   m_ObjectHideFlags: 0

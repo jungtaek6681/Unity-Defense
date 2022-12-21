@@ -50,6 +50,7 @@ MonoBehaviour:
   damage: 10
   range: 5
   fireRate: 7
+  cost: 15
 --- !u!1 &7190954320987387432
 GameObject:
   m_ObjectHideFlags: 0

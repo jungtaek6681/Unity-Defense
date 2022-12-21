@@ -112,4 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}
-  mouseOver: {r: 0, g: 0, b: 1, a: 1}
+  enable: {r: 0, g: 0, b: 1, a: 1}
+  disable: {r: 1, g: 0, b: 0, a: 1}
