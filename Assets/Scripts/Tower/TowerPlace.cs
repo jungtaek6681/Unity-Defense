@@ -35,7 +35,7 @@ public class TowerPlace : MonoBehaviour
 		{
 			render.material.color = normal;
 		}
-		else if (BuildManager.Instance.Energy >= BuildManager.Instance.SelectedTower.Cost)
+		else if (BuildManager.Instance.SelectedTower != null && BuildManager.Instance.Energy >= BuildManager.Instance.SelectedTower.Cost)
 		{
 			render.material.color = enable;
 		}
