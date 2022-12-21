@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class Tower : MonoBehaviour
 	private Transform topParts;
 	[SerializeField]
 	private Transform bottomParts;
+	public Sprite icon;
 
 	[Header("Spec")]
 	[SerializeField]

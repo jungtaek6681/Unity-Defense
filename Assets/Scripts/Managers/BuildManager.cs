@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class BuildManager : SingleTon<BuildManager>
 {
 	[Header("Build")]
-	[SerializeField]
 	private Tower selectedTower;
 	[SerializeField]
 	private int energy;
@@ -36,6 +35,11 @@ public class BuildManager : SingleTon<BuildManager>
 		Tower tower = Instantiate(selectedTower, place.transform.position, place.transform.rotation);
 		place.tower = tower;
 		Energy -= tower.Cost;
+	}
+
+	public void ChangeSelectedTower(Tower tower)
+	{
+		SelectedTower = tower;
 	}
 
 	public void GainEnergy(int energy)

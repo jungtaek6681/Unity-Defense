@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topParts: {fileID: 7909684586714653475}
   bottomParts: {fileID: 7518656352806415285}
+  icon: {fileID: 21300000, guid: fa91237b5487541158165bfce6ebfa0c, type: 3}
   damage: 10
   range: 5
   fireRate: 7
