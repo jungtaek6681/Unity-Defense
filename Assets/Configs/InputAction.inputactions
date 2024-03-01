@@ -22,15 +22,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Click",
-                    "type": "Button",
-                    "id": "e9d5d170-4f4f-4d07-aa95-da72e0b8374d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -53,17 +44,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e2bd432e-4f20-434c-bd9b-dd6233103159",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

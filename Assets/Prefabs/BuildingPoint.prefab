@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5640757176923072389}
   - component: {fileID: 1209042212516864088}
   - component: {fileID: 942650379327044238}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BuildingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,3 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecd1eb40ea53ac46bc4af84e6f9105b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 5640757176923072389}
+  normal: {r: 1, g: 1, b: 1, a: 1}
+  highLight: {r: 1, g: 0, b: 0, a: 1}
