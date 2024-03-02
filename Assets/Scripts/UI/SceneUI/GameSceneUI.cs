@@ -6,11 +6,14 @@ public class GameSceneUI : BaseUI
 {
     [SerializeField] GameScene gameScene;
 
+    [SerializeField] WindowUI testWindowUI;
+
     private void Start()
     {
         GetUI<Button>("PauseButton").onClick.AddListener(gameScene.Pause);
         GetUI<Button>("RestartButton").onClick.AddListener(gameScene.Restart);
         GetUI<Button>("TimeScaleButton").onClick.AddListener(gameScene.ChangeTimeScale);
+        GetUI<Button>("TestWindowButton").onClick.AddListener(ShowTestWindow);
     }
 
     private void OnEnable()
@@ -45,5 +48,10 @@ public class GameSceneUI : BaseUI
     private void SetTimeScale(float timeScale)
     {
         GetUI<TMP_Text>("TimeScaleValue").text = $"X{timeScale}";
+    }
+
+    private void ShowTestWindow()
+    {
+        Manager.UI.ShowWindowUI(testWindowUI);
     }
 }

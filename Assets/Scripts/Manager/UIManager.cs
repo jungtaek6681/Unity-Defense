@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] EventSystem defaultEventSystem;
 
     [SerializeField] Canvas popUpCanvas;
+    [SerializeField] Canvas windowCanvas;
+
     [SerializeField] Image popUpBlocker;
 
     private Stack<PopUpUI> popUpStack = new Stack<PopUpUI>();
@@ -68,5 +70,20 @@ public class UIManager : MonoBehaviour
         {
             ClosePopUpUI();
         }
+    }
+
+    public T ShowWindowUI<T>(T windowUI) where T : WindowUI
+    {
+        return Instantiate(windowUI, windowCanvas.transform);
+    }
+
+    public void SelectWindowUI(WindowUI windowUI)
+    {
+        windowUI.transform.SetAsLastSibling();
+    }
+
+    public void CloseWindowUI(WindowUI windowUI)
+    {
+        Destroy(windowUI.gameObject);
     }
 }
