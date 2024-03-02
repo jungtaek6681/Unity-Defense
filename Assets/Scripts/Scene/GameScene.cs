@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class GameScene : MonoBehaviour
 {
+    [SerializeField] PausePopUpUI pausePopUpUI;
+
     public event UnityAction<float> OnTimeScaleChanged;
 
     [SerializeField] int life;
@@ -15,7 +17,7 @@ public class GameScene : MonoBehaviour
 
     public void Pause()
     {
-        Debug.Log("Pause");
+        Manager.UI.ShowPopUpUI(pausePopUpUI);
     }
 
     public void Restart()
