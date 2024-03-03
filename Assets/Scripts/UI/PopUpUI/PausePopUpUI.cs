@@ -4,9 +4,6 @@ using UnityEngine.UI;
 
 public class PausePopUpUI : PopUpUI
 {
-    [SerializeField] SettingPopUpUI settingPopUpUI;
-    [SerializeField] ConfirmPopUpUI confirmPopUpUI;
-
     private void Start()
     {
         GetUI<Button>("ResumeButton").onClick.AddListener(Close);
@@ -16,12 +13,12 @@ public class PausePopUpUI : PopUpUI
 
     public void Setting()
     {
-        Manager.UI.ShowPopUpUI(settingPopUpUI);
+        Manager.UI.ShowPopUpUI<SettingPopUpUI>();
     }
 
     public void Exit()
     {
-        ConfirmPopUpUI ui = Manager.UI.ShowPopUpUI(confirmPopUpUI);
+        ConfirmPopUpUI ui = Manager.UI.ShowPopUpUI<ConfirmPopUpUI>();
         ui.OkButton.onClick.AddListener(Ok);
     }
 

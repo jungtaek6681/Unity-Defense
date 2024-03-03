@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class SettingPopUpUI : PopUpUI
 {
-    [SerializeField] ConfirmPopUpUI confirmPopUpUI;
-
     private void Start()
     {
         GetUI<Button>("SaveButton").onClick.AddListener(Save);
@@ -13,7 +11,7 @@ public class SettingPopUpUI : PopUpUI
 
     public void Save()
     {
-        ConfirmPopUpUI ui = Manager.UI.ShowPopUpUI(confirmPopUpUI);
+        ConfirmPopUpUI ui = Manager.UI.ShowPopUpUI<ConfirmPopUpUI>();
         ui.OkButton.onClick.AddListener(Ok);
     }
 

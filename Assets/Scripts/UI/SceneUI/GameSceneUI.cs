@@ -6,8 +6,6 @@ public class GameSceneUI : BaseUI
 {
     [SerializeField] GameScene gameScene;
 
-    [SerializeField] WindowUI testWindowUI;
-
     private void Start()
     {
         GetUI<Button>("PauseButton").onClick.AddListener(gameScene.Pause);
@@ -52,6 +50,6 @@ public class GameSceneUI : BaseUI
 
     private void ShowTestWindow()
     {
-        Manager.UI.ShowWindowUI(testWindowUI);
+        Manager.UI.ShowWindowUI<TestWindowUI>();
     }
 }

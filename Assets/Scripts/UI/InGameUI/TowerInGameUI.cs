@@ -1,10 +1,7 @@
-using UnityEngine;
 using UnityEngine.UI;
 
 public class TowerInGameUI : InGameUI
 {
-    [SerializeField] BuildInGameUI buildInGameUI;
-
     private void Start()
     {
         GetUI<Button>("ArcherButton").onClick.AddListener(BuildMenu);
@@ -14,6 +11,6 @@ public class TowerInGameUI : InGameUI
 
     private void BuildMenu()
     {
-        Manager.UI.ShowInGameUI(buildInGameUI);
+        Manager.UI.ShowInGameUI<BuildInGameUI>();
     }
 }

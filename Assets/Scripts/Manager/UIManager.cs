@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] EventSystem defaultEventSystem;
-
     [SerializeField] Canvas popUpCanvas;
     [SerializeField] Canvas windowCanvas;
     [SerializeField] Canvas inGameCanvas;
 
     [SerializeField] Image popUpBlocker;
     [SerializeField] Button inGameBlocker;
+
+    private Dictionary<string, BaseUI> dictionary = new Dictionary<string, BaseUI>();
 
     private Stack<PopUpUI> popUpStack = new Stack<PopUpUI>();
     private float prevTimeScale;
@@ -27,7 +27,8 @@ public class UIManager : MonoBehaviour
         if (EventSystem.current != null)
             return;
 
-        Instantiate(defaultEventSystem);
+        EventSystem eventSystem = Resources.Load<EventSystem>("UI/EventSystem");
+        Instantiate(eventSystem);
     }
 
     public T ShowPopUpUI<T>(T popUpUI) where T : PopUpUI
@@ -47,6 +48,18 @@ public class UIManager : MonoBehaviour
         T ui = Instantiate(popUpUI, popUpCanvas.transform);
         popUpStack.Push(ui);
         return ui;
+    }
+
+    public T ShowPopUpUI<T>(string path) where T : PopUpUI
+    {
+        T resource = Load<T>($"UI/PopUp/{path}");
+        return ShowPopUpUI(resource);
+    }
+
+    public T ShowPopUpUI<T>() where T : PopUpUI
+    {
+        T resource = Load<T>($"UI/PopUp/{typeof(T).Name}");
+        return ShowPopUpUI(resource);
     }
 
     public void ClosePopUpUI()
@@ -79,6 +92,18 @@ public class UIManager : MonoBehaviour
         return Instantiate(windowUI, windowCanvas.transform);
     }
 
+    public T ShowWindowUI<T>(string path) where T : WindowUI
+    {
+        T resource = Load<T>($"UI/Window/{path}");
+        return ShowWindowUI(resource);
+    }
+
+    public T ShowWindowUI<T>() where T : WindowUI
+    {
+        T resource = Load<T>($"UI/Window/{typeof(T).Name}");
+        return ShowWindowUI(resource);
+    }
+
     public void SelectWindowUI(WindowUI windowUI)
     {
         windowUI.transform.SetAsLastSibling();
@@ -102,6 +127,18 @@ public class UIManager : MonoBehaviour
         return ui;
     }
 
+    public T ShowInGameUI<T>(string path) where T : InGameUI
+    {
+        T resource = Load<T>($"UI/InGame/{path}");
+        return ShowInGameUI(resource);
+    }
+
+    public T ShowInGameUI<T>() where T : InGameUI
+    {
+        T resource = Load<T>($"UI/InGame/{typeof(T).Name}");
+        return ShowInGameUI(resource);
+    }
+
     public void CloseInGameUI()
     {
         if (curInGameUI == null)
@@ -110,5 +147,19 @@ public class UIManager : MonoBehaviour
         inGameBlocker.gameObject.SetActive(false);
         Destroy(curInGameUI.gameObject);
         curInGameUI = null;
+    }
+
+    private T Load<T>(string path) where T : BaseUI
+    {
+        if (dictionary.TryGetValue(path, out BaseUI ui))
+        {
+            return ui as T;
+        }
+        else
+        {
+            T resource = Resources.Load<T>(path);
+            dictionary.Add(path, resource);
+            return resource;
+        }
     }
 }
