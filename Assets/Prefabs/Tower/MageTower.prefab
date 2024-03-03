@@ -118,6 +118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: {fileID: 4825588174296238780}
+  magicPrefab: {fileID: 3494543704156470594, guid: ba0f92f361dc2104b837d73fed1cd31d, type: 3}
+  crystalPoint: {fileID: 8957587264693907894}
+  rotateSpeed: 30
+  attackDamage: 1
+  attackDelay: 2
 --- !u!1001 &75394250767965780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,6 +262,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be0b768028397264d9c378dbd4f93277, type: 3}
+--- !u!4 &8957587264693907894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4824572995031098, guid: be0b768028397264d9c378dbd4f93277, type: 3}
+  m_PrefabInstance: {fileID: 8961773773706191244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8958110490935677034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4230660994675174, guid: be0b768028397264d9c378dbd4f93277, type: 3}
