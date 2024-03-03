@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 455336819086780163}
   - component: {fileID: 7590347377246699665}
   - component: {fileID: 1293382949770712130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3434811599388923679}
   - component: {fileID: 5319727234733183351}
   - component: {fileID: 6366954068550192582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TB_Soldier_Swordman_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8310493251730533196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 6861283564467098669}
   - component: {fileID: 847898650251481528}
   - component: {fileID: 7137012719314848753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 9072079338791500390}
   - component: {fileID: 8404607462280345834}
   - component: {fileID: 5836355054622946636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TB_Soldier_Swordman_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,9 @@ GameObject:
   - component: {fileID: 1666699016079806538}
   - component: {fileID: 1257122893856390592}
   - component: {fileID: 1873865692708434337}
-  m_Layer: 0
+  - component: {fileID: 1588223578389828230}
+  - component: {fileID: 2859912348689215929}
+  m_Layer: 6
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1873865692708434337}
+  hp: 0
 --- !u!195 &1873865692708434337
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -462,6 +465,54 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!135 &1588223578389828230
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175709604026053577}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2859912348689215929
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175709604026053577}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4541249294741136680
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +524,7 @@ GameObject:
   - component: {fileID: 3991007264596219728}
   - component: {fileID: 3406803888507020915}
   - component: {fileID: 692544914190026714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TB_Soldier_Swordman_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7109632339366200053}
   - component: {fileID: 3404744281817812929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +696,7 @@ GameObject:
   - component: {fileID: 6667488467436896039}
   - component: {fileID: 7901797204672326206}
   - component: {fileID: 5631213061153208149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +782,7 @@ GameObject:
   - component: {fileID: 4432116696533918160}
   - component: {fileID: 3152137625470604950}
   - component: {fileID: 1453383026283541149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
