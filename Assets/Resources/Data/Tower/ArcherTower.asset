@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2114b62139af64c478fc93839e3fcb0a, type: 3}
+  m_Name: ArcherTower
+  m_EditorClassIdentifier: 
+  name: Archer Tower
+  description: Fast attack on a single target
+  prefab: {fileID: 8533458409185597795, guid: 796840cd8789d474583808dee10c0f96, type: 3}
+  levels:
+  - buildTime: 1
+    buildCost: 10
+    sellCost: 5
+  - buildTime: 5
+    buildCost: 20
+    sellCost: 5
