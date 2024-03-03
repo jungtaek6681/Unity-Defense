@@ -7,8 +7,8 @@ public class Monster : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] int hp;
-    public int HP { get { return hp; } private set { hp = value; } }
-
+    public int HP { get { return hp; } private set { hp = value; OnHPChanged?.Invoke(value); } }
+    public event UnityAction<int> OnHPChanged;
     public event UnityAction<Monster> OnDied;
 
 
@@ -25,7 +25,7 @@ public class Monster : MonoBehaviour
     public void TakeDamage(int damage)
     {
         HP -= damage;
-        if (hp <= 0)
+        if (HP <= 0)
         {
             Die();
         }

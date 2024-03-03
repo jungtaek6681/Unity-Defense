@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4327933961077183257}
   - component: {fileID: 455336819086780163}
   - component: {fileID: 7590347377246699665}
-  - component: {fileID: 1293382949770712130}
+  - component: {fileID: 2925830050407354697}
   m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1293382949770712130
+--- !u!114 &2925830050407354697
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,9 +112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1575642629173689732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b257fbc518c02c8478024751d7b57403, type: 3}
+  m_Script: {fileID: 11500000, guid: 11b095bc0a7c5c14b94446a444e7e2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 1257122893856390592}
 --- !u!1 &1790821332575599386
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1873865692708434337}
-  hp: 0
+  hp: 5
 --- !u!195 &1873865692708434337
 NavMeshAgent:
   m_ObjectHideFlags: 0
