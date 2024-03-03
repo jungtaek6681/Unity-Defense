@@ -9,12 +9,14 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] Canvas popUpCanvas;
     [SerializeField] Canvas windowCanvas;
+    [SerializeField] Canvas inGameCanvas;
 
     [SerializeField] Image popUpBlocker;
+    [SerializeField] Button inGameBlocker;
 
     private Stack<PopUpUI> popUpStack = new Stack<PopUpUI>();
     private float prevTimeScale;
-
+    private InGameUI curInGameUI;
     public void Init()
     {
 
@@ -85,5 +87,28 @@ public class UIManager : MonoBehaviour
     public void CloseWindowUI(WindowUI windowUI)
     {
         Destroy(windowUI.gameObject);
+    }
+
+    public T ShowInGameUI<T>(T inGameUI) where T : InGameUI
+    {
+        if (curInGameUI != null)
+        {
+            Destroy(curInGameUI.gameObject);
+        }
+
+        T ui = Instantiate(inGameUI, inGameCanvas.transform);
+        curInGameUI = ui;
+        inGameBlocker.gameObject.SetActive(true);
+        return ui;
+    }
+
+    public void CloseInGameUI()
+    {
+        if (curInGameUI == null)
+            return;
+
+        inGameBlocker.gameObject.SetActive(false);
+        Destroy(curInGameUI.gameObject);
+        curInGameUI = null;
     }
 }

@@ -10,6 +10,8 @@ public class BuildingPoint : MonoBehaviour
     [SerializeField] Color normal;
     [SerializeField] Color highLight;
 
+    [SerializeField] TowerInGameUI buildInGameUI;
+
     public void Build()
     {
         Debug.Log("Build");
@@ -17,7 +19,9 @@ public class BuildingPoint : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Build();
+        TowerInGameUI ui = Manager.UI.ShowInGameUI(buildInGameUI);
+        ui.followTarget = transform;
+        ui.followOffset = new Vector2(150, 0);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

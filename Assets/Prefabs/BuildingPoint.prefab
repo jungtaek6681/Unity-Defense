@@ -121,3 +121,4 @@ MonoBehaviour:
   renderer: {fileID: 5640757176923072389}
   normal: {r: 1, g: 1, b: 1, a: 1}
   highLight: {r: 1, g: 0, b: 0, a: 1}
+  buildInGameUI: {fileID: -1393601166507251199, guid: f1b0481492ff6b34692776f928d1fada, type: 3}
