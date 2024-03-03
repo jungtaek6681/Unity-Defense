@@ -95,7 +95,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
   followOffset: {x: 0, y: 0, z: 0}
-  buildInGameUI: {fileID: 9123542626460797266, guid: 0a8e5ac0b11b99843a91c3a0d6064a8c, type: 3}
+  archerData: {fileID: 11400000, guid: e022e840dfd2f234183fd938864bb6fa, type: 2}
+  cannonData: {fileID: 11400000, guid: fae6332aa830f1a4bb494b695dda7dc3, type: 2}
+  mageData: {fileID: 11400000, guid: 11a08db07dbe3f444861caad175e5739, type: 2}
 --- !u!114 &1177563819507905784
 MonoBehaviour:
   m_ObjectHideFlags: 0
